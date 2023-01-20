@@ -512,6 +512,44 @@ body {
   background-color: var(--Success-color);
 }
 
+.footer-form-wrap {
+  margin-left: 80px;
+}
+
+.footer-input {
+  background: transparent;
+  
+  width: 244px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding-left: 16px;
+}
+
+.footer-input::placeholder {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 2;
+letter-spacing: 0.04em;
+color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-input:not(:placeholder-shown) {
+  color: #ffffff;
+}
+
+.footer-email-btn {
+  width: 160px;
+  height: 40px;
+  background: var(--Primary-brand-color);
+border-radius: 4px;
+margin-left: 24px;
+}
+
+
+
 /* ---------PORTFOLIO----------- */
 
 .portfolio {
@@ -663,6 +701,9 @@ body {
   transform: translate(-50%, -50%) scaleX(1) scaleY(1);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  padding-left: 24px;
+  padding-top: 72px;
+  padding-right: 24px;
 }
 
 .backdrop.is-hidden .modal {
@@ -683,4 +724,13 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.modal-title {
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+text-align: center;
+letter-spacing: 0.02em;
+color: var(--Dark-color);
 }
