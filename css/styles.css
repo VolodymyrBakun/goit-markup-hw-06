@@ -231,6 +231,7 @@ body {
   padding: 16px 32px;
   border-color: var(--Primary-brand-color);
   border-radius: 4px;
+  border: none;
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -467,6 +468,10 @@ body {
   display: flex;
 }
 
+.footer-logotext-wrap {
+  width: 264px;
+}
+
 .footer-logo {
   font-family: "Raleway", sans-serif;
   font-style: normal;
@@ -481,6 +486,7 @@ body {
 
 .footer-soc-media {
   margin-left: 120px;
+  width: 208px;
 }
 
 .footer-text {
@@ -488,7 +494,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--Accent-color);
-  width: 264px;
+
   margin-top: 16px;
 }
 
@@ -500,6 +506,10 @@ body {
   letter-spacing: 0.02em;
   color: #ffffff;
 }
+.footer .soc-list {
+  gap: 16px;
+}
+
 .footer .soc-link {
   background-color: rgba(255, 255, 255, 0.1);
   transition-property: background-color;
@@ -516,24 +526,30 @@ body {
   margin-left: 80px;
 }
 
+.footer-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .footer-input {
   background: transparent;
-  
-  width: 244px;
+  width: 264px;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   padding-left: 16px;
+  outline: none;
 }
 
 .footer-input::placeholder {
-  font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 2;
-letter-spacing: 0.04em;
-color: rgba(255, 255, 255, 0.6);
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-input:not(:placeholder-shown) {
@@ -541,14 +557,38 @@ color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-email-btn {
-  width: 160px;
+  width: 165px;
   height: 40px;
   background: var(--Primary-brand-color);
-border-radius: 4px;
-margin-left: 24px;
+  border-radius: 4px;
+  margin-left: 24px;
+  fill: #ffffff;
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-email-btn:hover,
+.footer-email-btn:focus {
+  background: var(--Pressed-state-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 
+.footer-subscribe-icon {
+  margin-left: 16px;
+  display: flex;
+}
 
 /* ---------PORTFOLIO----------- */
 
@@ -677,6 +717,8 @@ margin-left: 24px;
   padding: 32px 16px;
 }
 
+/* --------------------Backdrop------------------------ */
+
 .backdrop {
   position: fixed;
   width: 100%;
@@ -720,6 +762,11 @@ margin-left: 24px;
   border-radius: 50%;
 }
 
+.modal-close:active {
+  background: var(--Pressed-state-color);
+  fill: #ffffff;
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -727,13 +774,13 @@ margin-left: 24px;
 }
 
 .modal-title {
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-text-align: center;
-letter-spacing: 0.02em;
-color: var(--Dark-color);
-margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--Dark-color);
+  margin-bottom: 16px;
 }
 
 .modal-form {
@@ -743,24 +790,48 @@ margin-bottom: 16px;
 
 .modal-input-wrap {
   width: 100%;
-  height: 58px;
   margin-bottom: 8px;
-  
 }
 
 .modal-input {
   width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-border-radius: 4px;
-margin-top: 4px;
+  border-radius: 4px;
+  padding-left: 35px;
+  outline: none;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-input:focus {
+  border: 1px solid var(--Primary-brand-color);
+  fill: var(--Primary-brand-color);
+}
+
+.modal-input:focus + .modal-input-icon {
+  fill: var(--Primary-brand-color);
 }
 
 .form-label {
   font-size: 12px;
-line-height: 1.33;
-letter-spacing: 0.04em;
-color: var(--Subtle-Text-color);
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--Subtle-Text-color);
+}
+
+.input-icon-wrap {
+  position: relative;
+}
+
+.modal-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--Dark-color);
 }
 
 textarea {
@@ -777,30 +848,71 @@ textarea {
   width: 100%;
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-border-radius: 4px;
-margin-top: 4px;
-padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 4px;
+  padding: 8px 16px;
+  outline: none;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .form-textarea::placeholder {
   font-size: 12px;
-line-height: 1.33;
-letter-spacing: 0.04em;
-color: rgba(117, 117, 117, 0.5);
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-
-.form-radio-span {
-font-size: 12px;
-line-height: 1.33;
-letter-spacing: 0.04em;
-color: #757575;
+.form-textarea:focus {
+  border: 1px solid var(--Primary-brand-color);
+  fill: var(--Primary-brand-color);
 }
 
-.form-radio-link {
+.form-textarea:focus::placeholder {
   color: var(--Primary-brand-color);
-text-decoration: underline;
+}
 
+.form-check-text {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+  display: flex;
+}
+
+.form-check-text::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--Dark-color);
+  border-radius: 2px;
+  display: block;
+  margin-right: 8px;
+}
+
+.form-check:checked + .form-check-text::before {
+  background-image: url(../images/icon-click.svg);
+  background-position: center;
+  border: none;
+}
+
+.form-check-link {
+  color: var(--Primary-brand-color);
+  text-decoration: underline;
+}
+
+.form-btn-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
 }
 
 .form-send-btn {
@@ -808,14 +920,20 @@ text-decoration: underline;
   height: 56px;
   background-color: var(--Primary-brand-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-border-radius: 4px;
-border: none;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #FFFFFF;
-margin-top: 24px;
-margin-left: auto;
-margin-right: auto;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-send-btn:hover,
+.form-send-btn:focus {
+  background: var(--Pressed-state-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
